@@ -24,7 +24,7 @@ public class Calculator {
 		CodePointCharStream input = CharStreams.fromString(source);
 		ParseTree ptree = compile(input);
 		ExprVisitorImpl visitor = new ExprVisitorImpl();
-		return visitor.visit(ptree);
+		return visitor.visit(ptree.getChild(0));
 	}
 
 	private ParseTree compile(CharStream source) {
@@ -32,7 +32,7 @@ public class Calculator {
 		CommonTokenStream tokenStream = new CommonTokenStream(lexer);
 		ExprParser parser = new ExprParser(tokenStream);
 		parser.addErrorListener(ThrowingErrorListener.INSTANCE);
-		ParseTree tree = parser.expr();
+		ParseTree tree = parser.prog();
 		
 		return tree;
 	}

@@ -21,15 +21,21 @@ public class CalculatorTest {
 
 	@Test
 	public void calculateOKTest() {
-		assertEquals(28, calc.calculate("((10-5)*5)+(21/7)").longValue());		
+		long value = calc.calculate("((10-5)*5)+(21/7)").longValue();
+		assertEquals(28, value);
+		System.out.println(value);
 	}
 	@Test
 	public void calculateOK2Test() {
-		assertEquals(28, calc.calculate("((10 -  5 ) *5) + (21   / 7)").longValue());		
+		long value = calc.calculate("((10 - 5 ) *5) + (21 / 7)").longValue();
+		assertEquals(28, value);
+		System.out.println(value);
 	}
 	
 	@Test (expected = ParseCancellationException.class)
 	public void calculateKOTest() {
-		assertEquals(5, calc.calculate("(10 - (5))-4)").longValue());		
+		long value = calc.calculate("(10 - (5))-4)").longValue();
+		assertEquals(5, value);
+		System.out.println(value);
 	}
 }
