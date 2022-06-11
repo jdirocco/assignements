@@ -2,6 +2,7 @@ package com.nexthink.assignements.assignement1.test;
 
 
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.antlr.v4.runtime.misc.ParseCancellationException;
@@ -35,18 +36,18 @@ public class ParenthesesTest {
 	}
 	
 	
-	@Test (expected = ParseCancellationException.class)
+	@Test 
 	public void calculateKO1Test() {
-		assertTrue(calc.validate("(()"));		
+		assertFalse(calc.validate("(()"));		
 	}
 	
-	@Test (expected = ParseCancellationException.class)
+	@Test 
 	public void calculateKO2Test() {
-		assertTrue(calc.validate("())"));		
+		assertFalse(calc.validate("())"));		
 	}
 	
-	@Test(expected = ParseCancellationException.class)
+	@Test
 	public void calculateKO3Test() {
-		assertTrue(calc.validate("()()"));		
+		assertFalse(calc.validate("()()"));		
 	}
 }
