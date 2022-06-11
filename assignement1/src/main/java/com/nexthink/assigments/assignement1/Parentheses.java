@@ -12,7 +12,7 @@ import com.nexthink.assignements.parentheses.ParenthesesParser;
 
 public class Parentheses {
 
-	public boolean validate(String source) {
+	public static boolean validate(String source) {
 		CodePointCharStream input = CharStreams.fromString(source);
 		try {
 			compile(input);
@@ -23,7 +23,7 @@ public class Parentheses {
 
 	}
 
-	private ParseTree compile(CharStream source) {
+	private static ParseTree compile(CharStream source) {
 		ParenthesesLexer lexer = new ParenthesesLexer(source);
 		CommonTokenStream tokenStream = new CommonTokenStream(lexer);
 		ParenthesesParser parser = new ParenthesesParser(tokenStream);
