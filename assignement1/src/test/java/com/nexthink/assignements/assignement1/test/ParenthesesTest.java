@@ -8,15 +8,15 @@ import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.nexthink.assigments.assignement1.Parentesis;
+import com.nexthink.assigments.assignement1.Parentheses;
 
-public class ParenthesisTest {
+public class ParenthesesTest {
 	
-	private Parentesis calc;
+	private Parentheses calc;
 	
 	@Before
 	public void init() {
-		calc = new Parentesis();
+		calc = new Parentheses();
 	}
 
 	
@@ -29,7 +29,10 @@ public class ParenthesisTest {
 		assertTrue(calc.validate("()"));		
 	}
 	
-	
+	@Test
+	public void calculateOK3Test() {
+		assertTrue(calc.validate(""));		
+	}
 	
 	
 	@Test (expected = ParseCancellationException.class)

@@ -4,25 +4,22 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CodePointCharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import com.nexthink.assignements.parentheses.ParenthesesLexer;
 import com.nexthink.assignements.parentheses.ParenthesesParser;
 
-public class Parentesis {
-
-	public static void main(String[] args) {
-
-		Parentesis calculator = new Parentesis();
-		System.out.println(calculator.validate("(((44+5)")); // 7.0
-		System.out.println(calculator.validate("()")); // 2.0
-	}
+public class Parentheses {
 
 	public boolean validate(String source) {
 		CodePointCharStream input = CharStreams.fromString(source);
-
-		ParseTree ptree = compile(input);
-		return true;
+		try {
+			compile(input);
+			return true;
+		} catch (ParseCancellationException e) {
+			return false;
+		}
 
 	}
 
