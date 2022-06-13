@@ -23,4 +23,3 @@ This command run the calculator and takes the expression from the command line
 ![](standalone/antlr4_parse_tree.png)
 
 The picture above has been generated from the code generated from the ```Expr``` grammar.
-```grun Expr prog -gui```
