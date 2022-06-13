@@ -24,4 +24,3 @@ This command runs the calculator and takes the expression from the command line
 ![](standalone/antlr4_parse_tree.png)
 
 The picture above has been generated from the code generated from the ```Parentheses``` grammar.
-```grun Parenthesis prog -gui```
