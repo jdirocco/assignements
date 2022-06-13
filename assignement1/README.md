@@ -18,3 +18,10 @@ The command generates the grammar java APIs.
 ```mvn compile exec:java -Dexec.mainClass="com.nexthink.assigments.assignement1.Runner" -Dexec.args="-expression '(())'"```
 
 This command runs the calculator and takes the expression from the command line
+
+
+## Expression binary tree
+![](standalone/antlr4_parse_tree.png)
+
+The picture above has been generated from the code generated from the ```Parentheses``` grammar.
+```grun Parenthesis prog -gui```
